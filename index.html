@@ -2,31 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>My Simple Blog</title>
-
-  <!-- Tailwind CSS via CDN -->
+  <title>Sadə Blog Səhifəsi</title>
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Make the page responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body class="bg-gray-100 text-gray-900 p-4">
+  <!-- Mərkəzləşdirilmiş və responsiv konteyner -->
   <div class="container mx-auto">
-    <!-- Header -->
+    
+    <!-- Səhifənin başlıq hissəsi: Blogun adı və qısa təsviri -->
     <header class="mb-6">
-      <h1 class="text-3xl font-bold mb-2">My Blog</h1>
-      <p class="text-gray-700">A simple blog page powered by Fetch API</p>
+      <!-- Əsas başlıq: Blogun adı -->
+      <h1 class="text-3xl font-bold mb-2">Blog Səhifəsi</h1>
+      <!-- Blog haqqında qısa məlumat və ya təsvir -->
+      <p class="text-gray-700">API-dən məlumat çəkərək kontenti dinamik göstəririk</p>
     </header>
 
-    <!-- Posts Container -->
+    <!-- Əsas məzmun hissəsi: Postların yerləşdiriləcəyi sahə -->
     <main>
+      <!-- Dinamik postların əlavə olunacağı konteyner:
+           Grid sistemi ilə düzülərək müxtəlif ekran ölçülərinə uyğunlaşdırılıb -->
       <div id="posts-container" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <!-- Dynamic posts will be rendered here -->
+        <!-- JavaScript vasitəsilə dinamik olaraq yaradılmış post kartları buraya əlavə ediləcək -->
       </div>
     </main>
   </div>
 
-  <!-- Link to your JavaScript file -->
-  <script src="./script.js"></script>
+  <!-- Post üçün HTML qəlib (template):
+       Bu şablon, JavaScript tərəfindən klonlanaraq hər bir post üçün istifadə olunacaq.
+       Şablonda postun başlığı, mətni və istifadəçi məlumatı üçün yerlər ayrılıb.
+  -->
+  <template id="post-template">
+    <div class="bg-white rounded shadow p-4 flex flex-col justify-between">
+      <!-- Postun başlığı üçün element: Dinamik olaraq postun başlığı daxil ediləcək -->
+      <h2 class="post-title text-xl font-semibold mb-2"></h2>
+      <!-- Post mətninin qısa təsviri: Burada postun əsas mətni göstəriləcək -->
+      <p class="post-body text-gray-700 mb-4"></p>
+      <!-- Postu əlavə edən istifadəçinin məlumatı: Məsələn, istifadəçi ID və ya adı -->
+      <span class="post-user text-sm text-gray-500"></span>
+    </div>
+  </template>
+
+  <!-- JavaScript faylı:
+       Bütün dinamik əməliyyatlar, API-dən məlumatların çəkilməsi, DOM manipulyasiyası və interaktivlik
+       "finalIndex.js" faylında yazılmışdır və burada qoşulur.
+  -->
+  <script src="./index.js"></script>
 </body>
 </html>

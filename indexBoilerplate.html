@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Simple Blog</title>
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Make the page responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body class="bg-gray-100 text-gray-900 p-4">
+  <div class="container mx-auto">
+    <!-- Header -->
+    <header class="mb-6">
+      <h1 class="text-3xl font-bold mb-2">My Blog</h1>
+      <p class="text-gray-700">A simple blog page powered by Fetch API</p>
+    </header>
+
+    <!-- Posts Container -->
+    <main>
+      <div id="posts-container" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Dynamic posts will be rendered here -->
+      </div>
+    </main>
+  </div>
+
+  <!-- Link to your JavaScript file -->
+  <script src="./script.js"></script>
+</body>
+</html>
